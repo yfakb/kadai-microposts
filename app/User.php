@@ -143,7 +143,7 @@ class User extends Model implements AuthenticatableContract,
     
     // 既にフォローしているかの確認
     public function is_favorite($userId) {
-        return $this->follow_favorite()->where('favorite_id', $userId)->exists();
+        return $this->follow_favorite()->where('id', $userId)->exists();
     }
 
     // お気に入り一覧
