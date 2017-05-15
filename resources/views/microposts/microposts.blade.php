@@ -22,7 +22,7 @@
                     {!! Form::close() !!}
                 @endif
             </div>
-
+            @include('user_favorite.favorite_button', ['user' => $user])
             
         </div>
     </li>
