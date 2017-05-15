@@ -2,7 +2,6 @@
 
 @section('content')
     @if (Auth::check())
-    あ
         <?php $user = Auth::user(); ?>
         <div class="row">
             <aside class="col-xs-4">

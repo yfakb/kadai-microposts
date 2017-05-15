@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 class UserFollowController extends Controller
 {
+    
     public function store(Request $request, $id)
     {
         \Auth::user()->follow($id);
@@ -19,5 +20,5 @@ class UserFollowController extends Controller
     {
         \Auth::user()->unfollow($id);
         return redirect()->back();
-    }
+    }    
 }

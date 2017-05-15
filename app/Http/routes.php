@@ -25,6 +25,7 @@ Route::post('signup', 'Auth\AuthController@postRegister')->name('signup.post');
 Route::get('logout', 'Auth\AuthController@getLogout')->name('logout.get');
 
 Route::get('/', 'WelcomeController@index');
+Route::resource('favorite', 'UserFavoriteController@index');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
@@ -34,8 +35,12 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('unfollow', 'UserFollowController@destroy')->name('user.unfollow');
         Route::get('followings', 'UsersController@followings')->name('users.followings');
         Route::get('followers', 'UsersController@followers')->name('users.followers');
+        
+        Route::post('favorite', 'UserFavoriteController@store')->name('user.favorite'); ;
+        Route::delete('unfavorite', 'UserFavoriteController@destroy')->name('user.unfavorite');        
     });
         
     
     Route::resource('microposts', 'MicropostsController', ['only' => ['store', 'destroy']]);
+    
 });

@@ -1,8 +1,8 @@
 <ul class="media-list">
+
 @foreach ($microposts as $micropost)
 
     <?php $user = $micropost->user; ?>
-
 
     <li class="media">
         <div class="media-left">
@@ -28,4 +28,3 @@
     </li>
 @endforeach
 </ul>
-{!! $microposts->render() !!}
